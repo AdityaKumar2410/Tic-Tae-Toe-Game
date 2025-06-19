@@ -1,0 +1,119 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #212121;
+  color: #f5f5f5;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.container {
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game {
+  height: 60vmin;
+  width: 60vmin;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
+
+.box {
+  height: 18vmin;
+  width: 18vmin;
+  border-radius: 0.75rem;
+  border: 2px solid #444;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  font-size: 5rem;
+  font-weight: bold;
+  color: #ff6f61;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  transition: transform 0.1s ease, background-color 0.2s ease;
+}
+
+.box:hover {
+  background-color: #ffe0b2;
+  transform: scale(1.05);
+}
+
+.box:disabled {
+  background-color: #eeeeee;
+  color: #ff6f61;
+  cursor: default;
+}
+
+#reset-btn,
+#new-btn {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  background-color: #ff6f61;
+  color: #fff;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#reset-btn:hover,
+#new-btn:hover {
+  background-color: #ff3d00;
+}
+
+#msg {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.msg-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  z-index: 999;
+}
+
+.hide {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .game {
+    height: 80vmin;
+    width: 80vmin;
+    grid-gap: 0.75rem;
+  }
+
+  .box {
+    font-size: 3.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
